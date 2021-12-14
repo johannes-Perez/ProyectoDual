@@ -15,77 +15,31 @@ require_once 'conexion.php';
 <body>
     <table border="1px">
         <tr>
+            <td>ID</td>
             <td>Nombre</td>
             <td>Telefono</td>
             <td>Email</td>
             <td>Responsable</td>
-            <td>Observaciones/Incidentes</td>
+            <td>Observaciones</td>
         </tr>
 
         <?php 
-       $query="SELECT * from alumnos";
+       $query="SELECT * from empresa";
     $resul=mysqli_query($conn,$query);
     while ($row= mysqli_fetch_array($resul)) {
         ?>
         <tr>
-            <td><?php echo $row['nombre'] ?></td>
-            <td><?php echo $row['telefono'] ?></td>
-            <td><?php echo $row['email'] ?></td>
-            <td><?php echo $row['responsable'] ?></td>
-            <td><?php echo $row['observacion'] ?></td>
+            <td><?php echo $row['ID_Empresa'] ?></td>
+            <td><?php echo $row['Nombre_Empresa'] ?></td>
+            <td><?php echo $row['Telefono'] ?></td>
+            <td><?php echo $row['Email'] ?></td>
+            <td><?php echo $row['Responsable'] ?></td>
+            <td><?php echo $row['Observaciones'] ?></td>
         </tr>
         <?php
     }
             ?>
-        <?php 
-      $query=mysqli_query($conn,"SELECT venta FROM ventas where num_semana=2");
-      $suma=0;
-      while($sumar=mysqli_fetch_array($query))
-      {
-      $suma=$suma+$sumar["venta"];
-      }
-
-      ?>
-
-        <p>Resultado ventas:</p>
-        <?php
-
-echo $suma;
-      ?>
 
 
-        <table border="1px">
-            <tr>
-                <td>id</td>
-                <td>gasto</td>
-                <td>num_semana</td>
-            </tr>
-
-            <?php 
-       $query="SELECT * from gastos  where num_semana=2  ";
-    $resul=mysqli_query($conn,$query);
-    while ($row= mysqli_fetch_array($resul)) {
+        echo $suma;
         ?>
-            <tr>
-                <td><?php echo $row['id'] ?></td>
-                <td><?php echo $row['gasto'] ?></td>
-                <td><?php echo $row['num_semana'] ?></td>
-            </tr>
-            <?php
-    }
-            ?>
-            <?php 
-      $query=mysqli_query($conn,"SELECT gasto FROM gastos where num_semana=2");
-      $suma=0;
-      while($sumar=mysqli_fetch_array($query))
-      {
-      $suma=$suma+$sumar["gasto"];
-      }
-
-      ?>
-
-            <p>Resultado gastos:</p>
-            <?php
-
-echo $suma;
-      ?>
