@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 14-12-2021 a las 10:05:50
+-- Tiempo de generación: 14-12-2021 a las 10:35:07
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -33,7 +33,7 @@ CREATE TABLE `actividades` (
   `Tipo_práctica` varchar(4) NOT NULL,
   `Total_Horas` int(64) NOT NULL,
   `Actividad_realizada` varchar(200) NOT NULL,
-  `Observaciones` varchar(200) NOT NULL
+  `Observaciones` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -46,7 +46,7 @@ CREATE TABLE `alumno` (
   `ID_Alumno` int(3) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido1` varchar(20) NOT NULL,
-  `2º Apellido` varchar(20) NOT NULL,
+  `Apellido2` varchar(20) NOT NULL,
   `Contraseña` varchar(64) NOT NULL,
   `DNI` varchar(9) NOT NULL,
   `Fecha_Nacimiento` date NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `alumno` (
   `Tutor` varchar(64) NOT NULL,
   `NºHoras_Dual` int(3) NOT NULL,
   `NºHoras_FCT` int(3) NOT NULL,
-  `Observaciones` varchar(64) NOT NULL
+  `Observaciones` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -83,8 +83,8 @@ CREATE TABLE `empresa` (
 CREATE TABLE `profesor` (
   `ID_Profesor` int(3) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
-  `1ºApellido` varchar(20) NOT NULL,
-  `2ºApellido` varchar(20) NOT NULL,
+  `Apellido1` varchar(20) NOT NULL,
+  `Apellido2` varchar(20) NOT NULL,
   `Contraseña` varchar(64) NOT NULL,
   `Email` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
