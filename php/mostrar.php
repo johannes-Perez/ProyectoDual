@@ -1,15 +1,13 @@
-<?php
-require_once 'conexion.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar</title>
+
 </head>
 
 <body>
@@ -24,6 +22,16 @@ require_once 'conexion.php';
         </tr>
 
         <?php 
+        
+        $servername = "localhost";
+        $database = "proyectodual";
+        $username = "root";
+        $password = "";
+        $port=3307;
+        
+        
+        $conn = mysqli_connect($servername, $username, $password, $database,$port);
+        
        $query="SELECT * from empresa";
     $resul=mysqli_query($conn,$query);
     while ($row= mysqli_fetch_array($resul)) {
@@ -39,7 +47,3 @@ require_once 'conexion.php';
         <?php
     }
             ?>
-
-
-        echo $suma;
-        ?>
