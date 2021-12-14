@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 14-12-2021 a las 10:35:07
+-- Tiempo de generación: 14-12-2021 a las 11:00:59
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyectodual`
 --
-create database proyectodual;
-use proyectodual;
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +59,13 @@ CREATE TABLE `alumno` (
   `Observaciones` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`ID_Alumno`, `Nombre`, `Apellido1`, `Apellido2`, `Contraseña`, `DNI`, `Fecha_Nacimiento`, `Email`, `Telefono`, `Empresa`, `Tutor`, `NºHoras_Dual`, `NºHoras_FCT`, `Observaciones`) VALUES
+(1, 'Pepe', 'Fernandez', 'Rodriguez', 'Alumno', '43563478F', '1995-11-16', 'pepefernandez@cesurformacion.com', 622546485, 'montajes Paco', 'Franciso', 12, 14, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -91,6 +97,13 @@ CREATE TABLE `profesor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Volcado de datos para la tabla `profesor`
+--
+
+INSERT INTO `profesor` (`ID_Profesor`, `Nombre`, `Apellido1`, `Apellido2`, `Contraseña`, `Email`) VALUES
+(1, 'Francisco', 'Mejia', 'Robles', 'Profesor', 'FranciscoMejia@cesurformacion.com');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -99,6 +112,12 @@ CREATE TABLE `profesor` (
 --
 ALTER TABLE `actividades`
   ADD PRIMARY KEY (`ID_Actividad`);
+
+--
+-- Indices de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD PRIMARY KEY (`ID_Alumno`);
 
 --
 -- Indices de la tabla `empresa`
@@ -127,6 +146,12 @@ ALTER TABLE `actividades`
 --
 ALTER TABLE `empresa`
   MODIFY `ID_Empresa` int(64) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `profesor`
+--
+ALTER TABLE `profesor`
+  MODIFY `ID_Profesor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
