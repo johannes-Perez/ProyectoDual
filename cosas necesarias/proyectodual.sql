@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 14-12-2021 a las 09:44:53
+-- Tiempo de generación: 14-12-2021 a las 10:05:50
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `actividades` (
   `ID_Actividad` int(2) NOT NULL,
-  `Fecha` date DEFAULT NULL,
-  `Tipo_práctica` varchar(4) DEFAULT NULL,
-  `Total_Horas` int(64) DEFAULT NULL,
-  `Actividad_realizada` varchar(200) DEFAULT NULL,
+  `Fecha` date NOT NULL,
+  `Tipo_práctica` varchar(4) NOT NULL,
+  `Total_Horas` int(64) NOT NULL,
+  `Actividad_realizada` varchar(200) NOT NULL,
   `Observaciones` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -43,19 +43,19 @@ CREATE TABLE `actividades` (
 --
 
 CREATE TABLE `alumno` (
-  `ID_Alumno` int(3) DEFAULT NULL,
-  `Nombre` varchar(20) DEFAULT NULL,
-  `Apellido1` varchar(20) DEFAULT NULL,
-  `2º Apellido` varchar(20) DEFAULT NULL,
-  `Contraseña` varchar(64) DEFAULT NULL,
-  `DNI` varchar(9) DEFAULT NULL,
-  `Fecha_Nacimiento` date DEFAULT NULL,
-  `Email` varchar(64) DEFAULT NULL,
-  `Telefono` int(9) DEFAULT NULL,
+  `ID_Alumno` int(3) NOT NULL,
+  `Nombre` varchar(20) NOT NULL,
+  `Apellido1` varchar(20) NOT NULL,
+  `2º Apellido` varchar(20) NOT NULL,
+  `Contraseña` varchar(64) NOT NULL,
+  `DNI` varchar(9) NOT NULL,
+  `Fecha_Nacimiento` date NOT NULL,
+  `Email` varchar(64) NOT NULL,
+  `Telefono` int(9) NOT NULL,
   `Empresa` varchar(64) NOT NULL,
-  `Tutor` varchar(64) DEFAULT NULL,
-  `NºHoras_Dual` int(3) DEFAULT NULL,
-  `NºHoras_FCT` int(3) DEFAULT NULL,
+  `Tutor` varchar(64) NOT NULL,
+  `NºHoras_Dual` int(3) NOT NULL,
+  `NºHoras_FCT` int(3) NOT NULL,
   `Observaciones` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -82,11 +82,11 @@ CREATE TABLE `empresa` (
 
 CREATE TABLE `profesor` (
   `ID_Profesor` int(3) NOT NULL,
-  `Nombre` varchar(20) DEFAULT NULL,
-  `1ºApellido` varchar(20) DEFAULT NULL,
-  `2ºApellido` varchar(20) DEFAULT NULL,
-  `Contraseña` varchar(64) DEFAULT NULL,
-  `Email` varchar(64) DEFAULT NULL
+  `Nombre` varchar(20) NOT NULL,
+  `1ºApellido` varchar(20) NOT NULL,
+  `2ºApellido` varchar(20) NOT NULL,
+  `Contraseña` varchar(64) NOT NULL,
+  `Email` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
