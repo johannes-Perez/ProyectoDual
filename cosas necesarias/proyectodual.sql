@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 14-12-2021 a las 11:00:59
+-- Tiempo de generación: 15-12-2021 a las 09:01:40
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -32,8 +32,8 @@ CREATE TABLE `actividades` (
   `Fecha` date NOT NULL,
   `Tipo_práctica` varchar(4) NOT NULL,
   `Total_Horas` int(64) NOT NULL,
-  `Actividad_realizada` varchar(200) NOT NULL,
-  `Observaciones` varchar(200) DEFAULT NULL
+  `Actividad_realizada` text NOT NULL,
+  `Observaciones` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE `alumno` (
   `Tutor` varchar(64) NOT NULL,
   `NºHoras_Dual` int(3) NOT NULL,
   `NºHoras_FCT` int(3) NOT NULL,
-  `Observaciones` varchar(64) DEFAULT NULL
+  `Observaciones` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -76,10 +76,17 @@ CREATE TABLE `empresa` (
   `ID_Empresa` int(64) NOT NULL,
   `Nombre_Empresa` varchar(64) DEFAULT NULL,
   `Telefono` int(9) DEFAULT NULL,
-  `Email` int(64) DEFAULT NULL,
+  `Email` varchar(64) DEFAULT NULL,
   `Responsable` varchar(64) DEFAULT NULL,
-  `Observaciones` varchar(200) NOT NULL
+  `Observaciones` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`ID_Empresa`, `Nombre_Empresa`, `Telefono`, `Email`, `Responsable`, `Observaciones`) VALUES
+(1, 'Montajes Paco', 655456743, 'montajespaco@gmail.com', 'Paco', '');
 
 -- --------------------------------------------------------
 
@@ -145,7 +152,7 @@ ALTER TABLE `actividades`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `ID_Empresa` int(64) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Empresa` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`
