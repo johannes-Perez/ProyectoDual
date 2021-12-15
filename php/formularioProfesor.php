@@ -32,6 +32,7 @@
         </div>
         <br>
         <input type="submit" class="btn btn-primary btn-lg" value="Insertar">
+        <input type="reset" class="btn btn-danger btn-lg" value="Borrar">
         <a href="index.php"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a>
       </form>
 </body>
