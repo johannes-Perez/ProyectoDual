@@ -55,7 +55,9 @@
     </p>
     <p>
         <label>Observaciones</label>
-        <input type="text" name="observaciones">
+        <textarea name="comentarios" rows="5" cols="20">
+            Escribe aquí tus comentarios
+        </textarea>
     </p>
 
 
