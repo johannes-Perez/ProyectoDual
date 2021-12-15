@@ -12,6 +12,13 @@ body {
     margin-right: auto;
 }
 
+/* Centrar los inputs y hacer que no ocupe toda la pantalla */
+.posicionFormulario {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
 .botonPadre {
   
     text-align: center;
