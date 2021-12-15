@@ -4,3 +4,10 @@
 body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
+
+/*Centra el logo del menu*/
+.logocesur {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
