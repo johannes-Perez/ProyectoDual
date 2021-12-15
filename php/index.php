@@ -6,7 +6,7 @@
 
     <!--Meta Tags Requeridos-->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Link estilos boostrap-->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -24,27 +24,25 @@
 
 
 
-<div class="container pt-5">
+<div class="botonPadre">
 
-<!--Divs container(El contenido del div lo ocupa entero) pb-2(Padding bottom)-->   
-<div class="container pb-2"><a><button type="button" class="btn btn-primary btn-lg btn-block ">Añadir alumno</button></a></div>
+   <a href="añadir_alumno.php">      <input type="button"  class="btn btn-primary btn-lg padding" value="Añadir alumno"></a> <br>
 
+   <a href="formularioProfesor.php"> <input type="button"  class="btn btn-primary btn-lg padding" value="Añadir profesor"></a> <br>
 
-<div class="container pb-2"><a><button type="button" class="btn btn-secondary btn-lg btn-block">Añadir empresa</button></a></div>
+    <a href="añadir_alumno.php">      <input type="button"  class="btn btn-primary btn-lg padding" value="Mostrar alumnos"></a> <br>
 
+   <a href="añadir_alumno.php">       <input type="button"  class="btn btn-primary btn-lg padding" value="Mostrar empresas"></a> <br>
 
-<div class="container pb-2"><a><button type="button" class="btn btn-primary btn-lg btn-block">Añadir profesor</button></a></div>
-
-
-<div class="container pb-2"><a><button type="button" class="btn btn-secondary btn-lg btn-block">Mostrar alumnos</button></a></div>
-
-
-<div class="container pb-2"><a><button type="button" class="btn btn-primary btn-lg btn-block">Mostrar empresas</button></a></div>
-
-
-<div class="container pb-2"><a><button type="button" class="btn btn-secondary btn-lg btn-block">Mostrar actividad de alumnos</button></a></div>
+   <a href="añadir_alumno.php">      <input type="button"  class="btn btn-primary btn-lg padding" value="Mostrar actividad de alumnos"></a> 
 
 </div>
+
+
+
+
+
+
 
 
 </body>
