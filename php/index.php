@@ -25,6 +25,8 @@
 
     <a href="añadir_alumno.php">      <input type="button"  class="btn btn-primary btn-lg padding" value="Mostrar alumnos"></a> <br>
 
+    <a href="añadir_empresa.php">      <input type="button"  class="btn btn-primary btn-lg padding" value="añadir empresas"></a> <br>
+
    <a href="añadir_alumno.php">       <input type="button"  class="btn btn-primary btn-lg padding" value="Mostrar empresas"></a> <br>
 
    <a href="añadir_alumno.php">      <input type="button"  class="btn btn-primary btn-lg padding" value="Mostrar actividad de alumnos"></a> <br>

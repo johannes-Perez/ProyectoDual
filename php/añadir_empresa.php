@@ -24,41 +24,42 @@
 
     <!--Formulario añadir empresa-->
 
+<div class="divEmpresa">
     <form method="POST" action=""> 
 
     <p>
         <label>Nombre</label>
-        <imput type="text" name="nombreEmp">
+        <input type="text" class="form-control form-control-lg posicionFormulario" name="nombreEmp">
     </p>
 
     <p>
         <label>Telefono</label>
-        <input type="number" name="telefonoEmp">
+        <input type="text" class="form-control form-control-lg posicionFormulario" name="telefonoEmp">
     </p>
 
     <p>
         <label>Email</label>
-        <input type="text" name="emailEmp">
+        <input type="text" class="form-control form-control-lg posicionFormulario" name="emailEmp">
     </p>
 
     <p>
         <label>Responsable</label>
-        <imput type="text" name="responsableEmp">
+        <input type="text" class="form-control form-control-lg posicionFormulario" name="responsableEmp">
     </p>
 
     <p>
-        <label>Observaciones e Incidentes</label>
-        <textarea name="comentarios" rows="5" cols="20">
+        <label>Observaciones e Incidentes</label><br>
+        <textarea class="form-control form-control-lg posicionFormulario" name="comentarios" rows="5" cols="20">
             Escribe aquí tus comentarios
         </textarea>
     </p>
 
     <p>
-        <input type="submit" value="Guardar">
+        <input type="submit" class="btn btn-primary btn-lg" value="Guardar">
     </p>
 
     </form>
-    
+</div>
 </body>    
 
 </html>

@@ -17,68 +17,68 @@
 <body>
 
 
-    <div class="form-alumno ">
+    <div class="form-alumno divEmpresa">
         <form method="post" action="">Formulario edicion
 
 
             <p>
                 <label>ID</label>
-                <input type="number" name="ID">
+                <input type="number" class="form-control form-control-lg posicionFormulario" name="ID">
             </p>
             <p>
                 <label>Nombre</label>
-                <input type="text" name="nombre">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="nombre">
             </p>
 
             <p>
                 <label>Apellido1</label>
-                <input type="text" name="apellido1">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="apellido1">
             </p>
             <p>
                 <label>Apellido2</label>
-                <input type="text" name="apellido2">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="apellido2">
             </p>
             <p>
                 <label>Contraseña</label>
-                <input type="text" name="contraseña">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="contraseña">
             </p>
             <p>
                 <label>DNI</label>
-                <input type="text" name="DNI">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="DNI">
             </p>
             <p>
                 <label>Fecha nacimineto</label>
-                <input type="date" name="Fnacimineto">
+                <input type="date" class="form-control form-control-lg posicionFormulario" name="Fnacimineto">
             </p>
             <p>
                 <label>Email</label>
-                <input type="text" name="email">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="email">
             </p>
             <p>
                 <label>Telefono</label>
-                <input type="number" name="telefono">
+                <input type="number" class="form-control form-control-lg posicionFormulario" name="telefono">
             </p>
             <p>
                 <label>Empresa</label>
-                <input type="text" name="empresa">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="empresa">
             </p>
             <p>
                 <label>Tutor</label>
-                <input type="text" name="tutor">
+                <input type="text" class="form-control form-control-lg posicionFormulario" name="tutor">
             </p>
             <p>
                 <label>Nºhoras Dual</label>
-                <input type="number" name="horas_dual">
+                <input type="number" class="form-control form-control-lg posicionFormulario" name="horas_dual">
             </p>
             <p>
                 <label>Nª horas FCT</label>
-                <input type="number" name="horas_fct">
+                <input type="number" class="form-control form-control-lg posicionFormulario" name="horas_fct">
             </p>
             <p>
                 <label>Observaciones</label>
                 <br>
-                <textarea name="comentarios" rows="5" cols="20">
-            Escribe aquí tus comentarios
+                <textarea name="comentarios" class="form-control form-control-lg posicionFormulario" rows="5" cols="20">
+            
         </textarea>
             </p>
 
