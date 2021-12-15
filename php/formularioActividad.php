@@ -14,11 +14,11 @@
           <label for="fecha">Fecha de realización</label>
           <!-- Sacar la fecha de hoy en el input date con PHP añadiendo este atributo:
             value="<?php echo date('Y-m-d'); ?>" -->
-          <input type="date" class="form-control form-control-lg" name="fecha" id="fecha" placeholder="" required>
+          <input type="date" class="form-control form-control-lg posicionFormulario" name="fecha" id="fecha" placeholder="" required>
         </div>
         <div class="form-group">
           <label for="tipo">Tipo prácticas</label>
-          <select class="form-select form-select-lg mb-3" name="tipo" id="tipo" required>
+          <select class="form-select form-select-lg mb-3 posicionFormulario" name="tipo" id="tipo" required>
             <option value="" disabled selected>&darr; Selecciona un tipo &darr;</option>
             <option value="Dual">Dual</option>
             <option value="FCT">FCT</option>
@@ -26,17 +26,19 @@
         </div>
         <div class="form-group">
           <label for="horas">Total horas realizados</label>
-          <input type="number" class="form-control form-control-lg" name="horas" id="horas" placeholder="" min="0" required>
+          <input type="number" class="form-control form-control-lg posicionFormulario" name="horas" id="horas" placeholder="" min="0" required>
         </div>
         <div class="form-group">
           <label for="act">Actividad realizada</label>
-          <textarea class="form-control form-control-lg" rows="5" name="act" id="act" required></textarea>
+          <textarea class="form-control form-control-lg posicionFormulario" rows="5" name="act" id="act" required></textarea>
         </div>
         <div class="form-group">
           <label for="obs">Observaciones</label>
-          <textarea class="form-control form-control-lg" rows="5" name="obs" id="obs"></textarea>
+          <textarea class="form-control form-control-lg posicionFormulario" rows="5" name="obs" id="obs"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg">Insertar</button>
+        <br>
+        <input type="submit" class="btn btn-primary btn-lg" value="Insertar">
+        <a href="index.php"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a>
       </form>
 </body>
 </html>

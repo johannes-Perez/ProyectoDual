@@ -12,25 +12,27 @@
     <form action="" method="post">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control form-control-lg" name="nombre" placeholder="" required>
+          <input type="text" class="form-control form-control-lg posicionFormulario" name="nombre" placeholder="" required>
         </div>
         <div class="form-group">
           <label for="ape1">Primer Apellido</label>
-          <input type="text" class="form-control form-control-lg" name="ape1" placeholder="" required>
+          <input type="text" class="form-control form-control-lg posicionFormulario" name="ape1" placeholder="" required>
         </div>
         <div class="form-group">
           <label for="ape2">Segundo Apellido</label>
-          <input type="text" class="form-control form-control-lg" name="ape2" placeholder="" required>
+          <input type="text" class="form-control form-control-lg posicionFormulario" name="ape2" placeholder="" required>
         </div>
         <div class="form-group">
           <label for="contra">Contraseña</label>
-          <input type="password" class="form-control form-control-lg" name="contra" placeholder="" required>
+          <input type="password" class="form-control form-control-lg posicionFormulario" name="contra" placeholder="" required>
         </div>
         <div class="form-group">
           <label for="correo">Correo Electrónico</label>
-          <input type="email" class="form-control form-control-lg" name="correo" placeholder="" required>
+          <input type="email" class="form-control form-control-lg posicionFormulario" name="correo" placeholder="" required>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg">Insertar</button>
+        <br>
+        <input type="submit" class="btn btn-primary btn-lg" value="Insertar">
+        <a href="index.php"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a>
       </form>
 </body>
 </html>
