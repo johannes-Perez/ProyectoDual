@@ -1,49 +1,45 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
 --
--- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 15-12-2021 a las 09:01:40
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- Host: localhost    Database: proyectodual
+-- ------------------------------------------------------
+-- Server version	8.0.27-0ubuntu0.20.04.1
 
 --
--- Base de datos: `proyectodual`
+-- Current Database: `proyectodual`
 --
 
--- --------------------------------------------------------
+CREATE DATABASE IF NOT EXISTS `proyectodual`;
+
+USE `proyectodual`;
 
 --
--- Estructura de tabla para la tabla `actividades`
+-- Table structure for table `actividades`
 --
+
 
 CREATE TABLE `actividades` (
-  `ID_Actividad` int(2) NOT NULL,
+  `ID_Actividad` int NOT NULL AUTO_INCREMENT,
   `Fecha` date NOT NULL,
   `Tipo_práctica` varchar(4) NOT NULL,
-  `Total_Horas` int(64) NOT NULL,
+  `Total_Horas` int NOT NULL,
   `Actividad_realizada` text NOT NULL,
-  `Observaciones` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
+  `Observaciones` text,
+  PRIMARY KEY (`ID_Actividad`)
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 --
--- Estructura de tabla para la tabla `alumno`
+-- Dumping data for table `actividades`
 --
 
+INSERT INTO `actividades` VALUES (1,'2021-12-15','Dual',5,'He programado en PHP',NULL),(2,'2021-12-17','FCT',6,'He programado un base de datos',NULL),(3,'2021-12-18','FCT',8,'He desmontado una pc',NULL);
+
+--
+-- Table structure for table `alumno`
+--
+
+DROP TABLE IF EXISTS `alumno`;
 CREATE TABLE `alumno` (
-  `ID_Alumno` int(3) NOT NULL,
+  `ID_Alumno` int NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(20) NOT NULL,
   `Apellido1` varchar(20) NOT NULL,
   `Apellido2` varchar(20) NOT NULL,
@@ -51,116 +47,99 @@ CREATE TABLE `alumno` (
   `DNI` varchar(9) NOT NULL,
   `Fecha_Nacimiento` date NOT NULL,
   `Email` varchar(64) NOT NULL,
-  `Telefono` int(9) NOT NULL,
+  `Telefono` int NOT NULL,
   `Empresa` varchar(64) NOT NULL,
   `Tutor` varchar(64) NOT NULL,
-  `NºHoras_Dual` int(3) NOT NULL,
-  `NºHoras_FCT` int(3) NOT NULL,
-  `Observaciones` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `NºHoras_Dual` int NOT NULL,
+  `NºHoras_FCT` int NOT NULL,
+  `Observaciones` text,
+  PRIMARY KEY (`ID_Alumno`)
+) ENGINE=InnoDB AUTO_INCREMENT=2;
 
 --
--- Volcado de datos para la tabla `alumno`
+-- Dumping data for table `alumno`
 --
 
-INSERT INTO `alumno` (`ID_Alumno`, `Nombre`, `Apellido1`, `Apellido2`, `Contraseña`, `DNI`, `Fecha_Nacimiento`, `Email`, `Telefono`, `Empresa`, `Tutor`, `NºHoras_Dual`, `NºHoras_FCT`, `Observaciones`) VALUES
-(1, 'Pepe', 'Fernandez', 'Rodriguez', 'Alumno', '43563478F', '1995-11-16', 'pepefernandez@cesurformacion.com', 622546485, 'montajes Paco', 'Franciso', 12, 14, NULL);
-
--- --------------------------------------------------------
+INSERT INTO `alumno` VALUES (1,'Pepe','Fernandez','Rodriguez','Alumno','43563478F','1995-11-16','pepefernandez@cesurformacion.com',622546485,'montajes Paco','Franciso',12,14,NULL);
 
 --
--- Estructura de tabla para la tabla `empresa`
+-- Table structure for table `empresa`
 --
 
+DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
-  `ID_Empresa` int(64) NOT NULL,
+  `ID_Empresa` int NOT NULL AUTO_INCREMENT,
   `Nombre_Empresa` varchar(64) DEFAULT NULL,
-  `Telefono` int(9) DEFAULT NULL,
+  `Telefono` int DEFAULT NULL,
   `Email` varchar(64) DEFAULT NULL,
   `Responsable` varchar(64) DEFAULT NULL,
-  `Observaciones` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Observaciones` text NOT NULL,
+  PRIMARY KEY (`ID_Empresa`)
+) ENGINE=InnoDB AUTO_INCREMENT=2;
 
 --
--- Volcado de datos para la tabla `empresa`
+-- Dumping data for table `empresa`
 --
 
-INSERT INTO `empresa` (`ID_Empresa`, `Nombre_Empresa`, `Telefono`, `Email`, `Responsable`, `Observaciones`) VALUES
-(1, 'Montajes Paco', 655456743, 'montajespaco@gmail.com', 'Paco', '');
-
--- --------------------------------------------------------
+INSERT INTO `empresa` VALUES (1,'Montajes Paco',655456743,'montajespaco@gmail.com','Paco','');
 
 --
--- Estructura de tabla para la tabla `profesor`
+-- Table structure for table `profesor`
 --
 
+DROP TABLE IF EXISTS `profesor`;
 CREATE TABLE `profesor` (
-  `ID_Profesor` int(3) NOT NULL,
+  `ID_Profesor` int NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(20) NOT NULL,
   `Apellido1` varchar(20) NOT NULL,
   `Apellido2` varchar(20) NOT NULL,
   `Contraseña` varchar(64) NOT NULL,
-  `Email` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Email` varchar(64) NOT NULL,
+  PRIMARY KEY (`ID_Profesor`)
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 --
--- Volcado de datos para la tabla `profesor`
+-- Dumping data for table `profesor`
 --
 
-INSERT INTO `profesor` (`ID_Profesor`, `Nombre`, `Apellido1`, `Apellido2`, `Contraseña`, `Email`) VALUES
-(1, 'Francisco', 'Mejia', 'Robles', 'Profesor', 'FranciscoMejia@cesurformacion.com');
+INSERT INTO `profesor` VALUES (1,'Francisco','Mejia','Robles','Profesor','FranciscoMejia@cesurformacion.com'),(2,'Antonio','Maldonado','Mora','ekisde','tuhprofehreshulon@cesurformacion.com'),(3,'Jose Miguel','Castaño','Rubio','ekisde','josemiquel@cesur.es');
 
 --
--- Índices para tablas volcadas
+-- Table structure for table `alumno_actividad`
 --
 
---
--- Indices de la tabla `actividades`
---
-ALTER TABLE `actividades`
-  ADD PRIMARY KEY (`ID_Actividad`);
+DROP TABLE IF EXISTS `alumno_actividad`;
+CREATE TABLE `alumno_actividad` (
+  `ID_Actividad` int NOT NULL,
+  `ID_Alumno` int NOT NULL,
+  PRIMARY KEY (`ID_Actividad`,`ID_Alumno`),
+  KEY `secundaria_alm_act` (`ID_Alumno`),
+  CONSTRAINT `secundaria_act_alm` FOREIGN KEY (`ID_Actividad`) REFERENCES `actividades` (`ID_Actividad`) ON UPDATE CASCADE,
+  CONSTRAINT `secundaria_alm_act` FOREIGN KEY (`ID_Alumno`) REFERENCES `alumno` (`ID_Alumno`) ON UPDATE CASCADE
+) ENGINE=InnoDB;
 
 --
--- Indices de la tabla `alumno`
---
-ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`ID_Alumno`);
-
---
--- Indices de la tabla `empresa`
---
-ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`ID_Empresa`);
-
---
--- Indices de la tabla `profesor`
---
-ALTER TABLE `profesor`
-  ADD PRIMARY KEY (`ID_Profesor`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
+-- Dumping data for table `alumno_actividad`
 --
 
---
--- AUTO_INCREMENT de la tabla `actividades`
---
-ALTER TABLE `actividades`
-  MODIFY `ID_Actividad` int(2) NOT NULL AUTO_INCREMENT;
+INSERT INTO `alumno_actividad` VALUES (1,1);
 
 --
--- AUTO_INCREMENT de la tabla `empresa`
+-- Table structure for table `alumno_profesor`
 --
-ALTER TABLE `empresa`
-  MODIFY `ID_Empresa` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+DROP TABLE IF EXISTS `alumno_profesor`;
+CREATE TABLE `alumno_profesor` (
+  `ID_Profesor` int NOT NULL,
+  `ID_Alumno` int NOT NULL,
+  PRIMARY KEY (`ID_Profesor`,`ID_Alumno`),
+  KEY `secundaria_alumno` (`ID_Alumno`),
+  CONSTRAINT `secundaria_alumno` FOREIGN KEY (`ID_Alumno`) REFERENCES `alumno` (`ID_Alumno`) ON UPDATE CASCADE,
+  CONSTRAINT `secundaria_profesor` FOREIGN KEY (`ID_Profesor`) REFERENCES `profesor` (`ID_Profesor`) ON UPDATE CASCADE
+) ENGINE=InnoDB;
 
 --
--- AUTO_INCREMENT de la tabla `profesor`
+-- Dumping data for table `alumno_profesor`
 --
-ALTER TABLE `profesor`
-  MODIFY `ID_Profesor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `alumno_profesor` VALUES (1,1);
