@@ -23,17 +23,11 @@
 
         <?php 
         
-        $servername = "localhost";
-        $database = "proyectodual";
-        $username = "root";
-        $password = "";
-        $port=3307;
         
-        
-        $conn = mysqli_connect($servername, $username, $password, $database,$port);
+        require 'lib/conexion_mysql.php';
         
        $query="SELECT * from empresa";
-    $resul=mysqli_query($conn,$query);
+    $resul=mysqli_query($conexion_mysql,$query);
     while ($row= mysqli_fetch_array($resul)) {
         ?>
         <tr>

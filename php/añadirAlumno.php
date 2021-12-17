@@ -2,12 +2,8 @@
 
 error_reporting(0);
     /*CONEXION*/
-    $servername = "localhost";
-    $database = "proyectodual";
-    $username = "root";
-    $password = "";
-    $port=3307;
-    $conn = mysqli_connect($servername, $username, $password, $database,$port);
+    require 'lib/conexion_mysql.php';
+
 
     /*campos a rellenar*/
     $ID=$_GET['ID'];
@@ -27,7 +23,7 @@ error_reporting(0);
 
     if ($nombre && $ID !=null){
         $query="insert into alumnos(ID_Alumno,Nombre,Apellido1,Apellido2,Contraseña,DNI,Fecha_Nacimiento,Email,Telefono,Empresa,Tutor,NºHoras_Dual,NºHoras_FCT,Observaciones)values('".$ID."','".$nombre."','".$apellido1."','".$apellido2."','".$contraseña."','".$DNI."','".$fnacimineto."','".$email."','".$telefono."','".$empresa."','".$tutor."','".$horasdual."','".$horasfct."','".$observaciones."')";
-        mysqli_query($conn,$query);
+        mysqli_query($conexion_mysql,$query);
         header("location:index.php");
 
     }
