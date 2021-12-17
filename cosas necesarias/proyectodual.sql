@@ -69,11 +69,11 @@ INSERT INTO `alumno` VALUES (1,'Pepe','Fernandez','Rodriguez','Alumno','43563478
 DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `ID_Empresa` int NOT NULL AUTO_INCREMENT,
-  `Nombre_Empresa` varchar(64) DEFAULT NULL,
-  `Telefono` int DEFAULT NULL,
-  `Email` varchar(64) DEFAULT NULL,
-  `Responsable` varchar(64) DEFAULT NULL,
-  `Observaciones` text NOT NULL,
+  `Nombre_Empresa` varchar(64) NOT NULL,
+  `Telefono` int NOT NULL,
+  `Email` varchar(64) NOT NULL,
+  `Responsable` varchar(64) NOT NULL,
+  `Observaciones` text DEFAULT NULL,
   PRIMARY KEY (`ID_Empresa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2;
 
@@ -81,7 +81,7 @@ CREATE TABLE `empresa` (
 -- Dumping data for table `empresa`
 --
 
-INSERT INTO `empresa` VALUES (1,'Montajes Paco',655456743,'montajespaco@gmail.com','Paco','');
+INSERT INTO `empresa` VALUES (1,'Montajes Paco',655456743,'montajespaco@gmail.com','Paco',NULL),(2,'Electronica Vadillo',952654812,'electrovadi@gmail.com','Jhon Travolta',NULL);
 
 --
 -- Table structure for table `profesor`
