@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+/*error_reporting(0);*/
     /*CONEXION*/
     require 'lib/conexion_mysql.php';
 
@@ -24,7 +24,7 @@ error_reporting(0);
     if ($nombre && $ID !=null){
         $query="insert into alumnos(ID_Alumno,Nombre,Apellido1,Apellido2,Contraseña,DNI,Fecha_Nacimiento,Email,Telefono,Empresa,Tutor,NºHoras_Dual,NºHoras_FCT,Observaciones)values('".$ID."','".$nombre."','".$apellido1."','".$apellido2."','".$contraseña."','".$DNI."','".$fnacimineto."','".$email."','".$telefono."','".$empresa."','".$tutor."','".$horasdual."','".$horasfct."','".$observaciones."')";
         mysqli_query($conexion_mysql,$query);
-        header("location:index.php");
+        header("location:../html/index.html");
 
     }
     ?>

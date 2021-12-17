@@ -21,7 +21,7 @@ $nl = $query->num_rows;
 
 for($x=0;$x<$nl;$x++){
     $actividad=$query->fetch_assoc();
-    echo "<tr><td>" . $actividad["ID_Actividad "] ."</td> <td>". $actividad["Fecha"]."</td> <td>". $actividad["Tipo_práctica"]."</td><td>". $actividad["Total_Horas"]."</td><td>"
+    echo "<tr><td>" . $actividad["ID_Actividad"] ."</td> <td>". $actividad["Fecha"]."</td> <td>". $actividad["Tipo_práctica"]."</td><td>". $actividad["Total_Horas"]."</td><td>"
     .$actividad["Actividad_realizada"]."</td><td>". $actividad["Observaciones"]."</td>";
     echo "</tr>";
     

@@ -20,6 +20,6 @@
         mysqli_query($conexion_mysql, $codigo_sql);
         //mysqli_query($conexion_mysql, $codigo_sql2);
         
-        header("Location:../html/formularioActividad.html");
+        header("Location:mostrar_actividad.php");
     }
 ?>
