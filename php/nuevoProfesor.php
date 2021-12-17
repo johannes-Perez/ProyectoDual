@@ -12,6 +12,6 @@
         
         mysqli_query($conexion_mysql, $codigo_sql);
         
-        header("Location:formularioProfesor.php");
+        header("Location:../html/formularioProfesor.html");
     }
 ?>
