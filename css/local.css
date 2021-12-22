@@ -50,13 +50,13 @@ th, td{
 .menu a{
   text-decoration: none;
   color: black;
-  font-size: 35px;
+  font-size: 25px;
   float: left;
-  margin-left: 5px;
+  
   padding: 14px 15px;
 }
 #contenido{
-width: 800px; 
+width: 2500px; 
 margin: 0 auto;
 }
 .hoverAmarillo:hover{
