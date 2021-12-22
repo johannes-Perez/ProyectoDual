@@ -10,6 +10,10 @@
     <!--Link estilos boostrap-->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/local.css">
+</head>
+<body>
+    
+
     <div class="encabezado">
        <img class="logo" alt="logo" src="../img/CESUR-web.png">
     </div>
@@ -25,7 +29,7 @@
 <?php
     require 'lib/conexion_mysql.php';
 
-echo "<table class='table' border=1 align='center'> <tr><th> ID_Actividad </th> <th> Fecha </th><th> Tipo_práctica </th><th> Total_Horas </th><th> Actividad_realizada </th><th> Observaciones </th></tr>";
+echo "<table class='table table-dark'> <tr><th> ID_Actividad </th> <th> Fecha </th><th> Tipo_práctica </th><th> Total_Horas </th><th> Actividad_realizada </th><th> Observaciones </th></tr>";
 
 
 $query = $conexion_mysql->query ("SELECT * FROM actividades");
@@ -39,4 +43,8 @@ for($x=0;$x<$nl;$x++){
     
 }
 ?>
-<a href="../html/index.html"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a>
+</table>
+<!-- Comentar al equipo si sige haciendo falta este boton con la adición del menú superior
+    <a href="../html/index.html"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a> -->
+</body>
+</html>
