@@ -26,17 +26,15 @@
     </div>
     </body>
 <?php
-    require 'lib/conexion_mysql.php';
+    require 'lib/consultas.php';
 
 echo "<table class='table' border=1 align='center'> <tr><th> ID_Empresa </th> <th> Nombre de la empresa </th><th> Telefono </th><th> Email </th><th> Responsable </th><th> Observaciones </th></tr>";
 
+$BaseDatos=new consultas();
+$resultado=$BaseDatos->mostrarempresa();
 
-$query = $conexion_mysql->query ("SELECT * FROM empresa");
-$nl = $query->num_rows;
-
-for($x=0;$x<$nl;$x++){
-    $profesor=$query->fetch_assoc();
-    echo "<tr><td>" . $profesor["ID_Empresa"] ."</td> <td>". $profesor["Nombre_Empresa"]."</td> <td>". $profesor["Telefono"]."</td><td>". $profesor["Email"]."</td><td>". $profesor["Responsable"]."</td><td>".$profesor["Observaciones"]."</td>";
+foreach($resultado as $empresa){
+    echo "<tr><td>" . $empresa["ID_Empresa"] ."</td> <td>". $empresa["Nombre_Empresa"]."</td> <td>". $empresa["Telefono"]."</td><td>". $empresa["Email"]."</td><td>". $empresa["Responsable"]."</td><td>".$empresa["Observaciones"]."</td>";
     echo "</tr>";   
 }
 ?>

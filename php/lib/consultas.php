@@ -49,7 +49,7 @@
   		}
 
 		//mostrar_alumno.php
-		public function mostraralumno(){
+		public function mostraralumno(){ 
 			$sql="SELECT * FROM alumno";
 			$resultado =$this->realizarConsulta($sql);
 			if ($resultado!=null){
@@ -63,6 +63,53 @@
 			}
 		}
 
+		//mostrar profesor.php
+
+		public function mostrarprofesor(){
+			$sql="SELECT * FROM profesor";
+			$resultado =$this->realizarConsulta($sql);
+			if ($resultado!=null){
+				$tabla=[];
+				while($fila=$resultado->fetch_assoc()){
+					$tabla[]=$fila;
+				}
+					return $tabla;
+				}else{
+					return null;
+			}
+		}
+
+	//mostrar empresa.php
+
+	public function mostrarempresa(){
+		$sql="SELECT * FROM empresa";
+		$resultado =$this->realizarConsulta($sql);
+		if ($resultado!=null){
+			$tabla=[];
+			while($fila=$resultado->fetch_assoc()){
+				$tabla[]=$fila;
+			}
+				return $tabla;
+			}else{
+				return null;
+		}
+	}
+
+	//mostrar actividad.php
+
+	public function mostraractividad(){
+		$sql="SELECT * FROM actividades";
+		$resultado =$this->realizarConsulta($sql);
+		if ($resultado!=null){
+			$tabla=[];
+			while($fila=$resultado->fetch_assoc()){
+				$tabla[]=$fila;
+			}
+				return $tabla;
+			}else{
+				return null;
+		}
+	}
 
 	}
 ?>
