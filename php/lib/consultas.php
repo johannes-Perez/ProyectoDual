@@ -12,20 +12,57 @@
 		    $this->realizarConsulta($sql);
   		}
 
-		// Aquí podeis añadir más funciones a la base de datos
+		// nuevoAlumno.php sin observaciones
+		public function nuevoAlumnoSin($nombre, $ape1, $ape2, $contra, $dni, $fecha, $correo, $tel, $empresa, $tutor, $ndual, $nfct){
+			$sql="INSERT INTO alumno (Nombre,Apellido1,Apellido2,Contraseña,DNI,Fecha_Nacimiento,Email,Telefono,Empresa,Tutor,NºHoras_Dual,NºHoras_FCT) VALUES ('".$nombre."','".$ape1."','".$ape2."','".$contra."','".$dni."','".$fecha."','".$correo."',".$tel.",'".$empresa."','".$tutor."',".$ndual.",".$nfct.")";
+		    $this->realizarConsulta($sql);
+  		}
+
+		// nuevoAlumno.php con observaciones
+		public function nuevoAlumnoCon($nombre, $ape1, $ape2, $contra, $dni, $fecha, $correo, $tel, $empresa, $tutor, $ndual, $nfct, $obs){
+			$sql="INSERT INTO alumno (Nombre,Apellido1,Apellido2,Contraseña,DNI,Fecha_Nacimiento,Email,Telefono,Empresa,Tutor,NºHoras_Dual,NºHoras_FCT,Observaciones) VALUES ('".$nombre."','".$ape1."','".$ape2."','".$contra."','".$dni."','".$fecha."','".$correo."',".$tel.",'".$empresa."','".$tutor."',".$ndual.",".$nfct.",'".$obs."')";
+		    $this->realizarConsulta($sql);
+  		}
+
+		// nuevaEmpresa.php sin observaciones
+		public function nuevaEmpresaSin($nombre, $tel, $correo, $respon){
+			$sql="INSERT INTO empresa (Nombre_Empresa,Telefono,Email,Responsable) VALUES ('".$nombre."', ".$tel.", '".$correo."', '".$respon."')";
+		    $this->realizarConsulta($sql);
+  		}
+
+		// nuevaEmpresa.php con observaciones
+		public function nuevaEmpresaCon($nombre, $tel, $correo, $respon, $obs){
+			$sql="INSERT INTO empresa (Nombre_Empresa,Telefono,Email,Responsable,Observaciones) VALUES ('".$nombre."', ".$tel.", '".$correo."', '".$respon."','".$obs."')";
+		    $this->realizarConsulta($sql);
+  		}
+
+		// nuevaActividad.php sin observaciones
+		public function nuevaActividadSin($fecha, $tipo, $horas, $act){
+			$sql="INSERT INTO actividades (Fecha, Tipo_práctica, Total_Horas, Actividad_realizada) VALUES ('".$fecha."', '".$tipo."', ".$horas.", '".$act."')";
+		    $this->realizarConsulta($sql);
+  		}
+
+		// nuevaActividad.php con observaciones
+		public function nuevaActividadCon($fecha, $tipo, $horas, $act, $obs){
+			$sql="INSERT INTO actividades (Fecha, Tipo_práctica, Total_Horas, Actividad_realizada, Observaciones) VALUES ('".$fecha."', '".$tipo."', ".$horas.", '".$act."','".$obs."')";
+		    $this->realizarConsulta($sql);
+  		}
+
 		//mostrar_alumno.php
 		public function mostraralumno(){
-		$sql="SELECT * FROM alumno";
-		$resultado =$this->realizarConsulta($sql);
-		if ($resultado!=null){
-			$tabla=[];
-			while($fila=$resultado->fetch_assoc()){
-				$tabla[]=$fila;
+			$sql="SELECT * FROM alumno";
+			$resultado =$this->realizarConsulta($sql);
+			if ($resultado!=null){
+				$tabla=[];
+				while($fila=$resultado->fetch_assoc()){
+					$tabla[]=$fila;
+				}
+					return $tabla;
+				}else{
+					return null;
 			}
-				return $tabla;
-			}else{
-				return null;
 		}
+
+
 	}
-}
 ?>
