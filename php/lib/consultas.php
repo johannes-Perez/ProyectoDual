@@ -13,5 +13,19 @@
   		}
 
 		// Aquí podeis añadir más funciones a la base de datos
+		//mostrar_alumno.php
+		public function mostraralumno(){
+		$sql="SELECT * FROM alumno";
+		$resultado =$this->realizarConsulta($sql);
+		if ($resultado!=null){
+			$tabla=[];
+			while($fila=$resultado->fetch_assoc()){
+				$tabla[]=$fila;
+			}
+				return $tabla;
+			}else{
+				return null;
+		}
 	}
+}
 ?>

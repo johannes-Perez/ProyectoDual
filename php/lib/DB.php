@@ -6,19 +6,19 @@
 class DB
 {
   //Atributos necesarios para la conexion
-  private $host="localhost";
-  private $user="elusuario";
-  private $pass="lacontra";
-  private $db_name="proyectodual";
-  private $port="3306";
+  // private $host="localhost";
+  // private $user="elusuario";
+  // private $pass="lacontra";
+  // private $db_name="proyectodual";
+  // private $port="3306";
 
-  /*
+  
   private $host="localhost";
   private $user="root";
   private $pass="";
   private $db_name="proyectodual";
-  private $port="3306";
-  */
+  private $port="3307";
+  
 
   //Conector
   private $conexion;
