@@ -25,7 +25,7 @@ CREATE TABLE `actividades` (
   `Actividad_realizada` text NOT NULL,
   `Observaciones` text,
   PRIMARY KEY (`ID_Actividad`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `actividades`
@@ -55,7 +55,7 @@ CREATE TABLE `alumno` (
   `Observaciones` text,
   `rol` int DEFAULT 2,
   PRIMARY KEY (`ID_Alumno`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `alumno`
@@ -76,7 +76,7 @@ CREATE TABLE `empresa` (
   `Responsable` varchar(64) NOT NULL,
   `Observaciones` text,
   PRIMARY KEY (`ID_Empresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `empresa`
@@ -98,7 +98,7 @@ CREATE TABLE `profesor` (
   `Email` varchar(64) NOT NULL,
   `rol` int DEFAULT 1,
   PRIMARY KEY (`ID_Profesor`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `profesor`
@@ -119,7 +119,7 @@ CREATE TABLE `alumno_actividad` (
   KEY `secundaria_alm_act` (`ID_Alumno`),
   CONSTRAINT `secundaria_act_alm` FOREIGN KEY (`ID_Actividad`) REFERENCES `actividades` (`ID_Actividad`) ON UPDATE CASCADE,
   CONSTRAINT `secundaria_alm_act` FOREIGN KEY (`ID_Alumno`) REFERENCES `alumno` (`ID_Alumno`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 --
@@ -140,7 +140,7 @@ CREATE TABLE `alumno_profesor` (
   KEY `secundaria_alumno` (`ID_Alumno`),
   CONSTRAINT `secundaria_alumno` FOREIGN KEY (`ID_Alumno`) REFERENCES `alumno` (`ID_Alumno`) ON UPDATE CASCADE,
   CONSTRAINT `secundaria_profesor` FOREIGN KEY (`ID_Profesor`) REFERENCES `profesor` (`ID_Profesor`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `alumno_profesor`
