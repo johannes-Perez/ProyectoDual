@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require 'lib/consultas.php';
+    $BaseDatos=new consultas();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,30 +16,37 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/local.css">
 
+    <title>Iniciar Sesi&oacute;n</title>
+
 </head>
 
 
 <?php
 
-    // var_dump($_POST);
+$encontrado = false;
 
     switch ($_POST["rol"]) {
         case 'p':
 
-            $conexion_mysql= mysqli_connect("localhost", "elusuario", "lacontra", "proyectodual");
+            $resultado=$BaseDatos->loginProfesor($_POST["nom"]);
 
-            $codigo_sql = "SELECT * FROM profesor where Nombre='".$_POST["nom"]."'";
-            $resultado = mysqli_query($conexion_mysql, $codigo_sql);
-            $registro = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+            foreach($resultado as $registro){
+                if ($_POST["nom"] == $registro["Nombre"]) {
+                    $encontrado = true;
+                    $nombre = $registro["Nombre"];
+                    $rol = $registro["rol"];
+                    $contra = $registro["Contraseña"];
+                    $id = $registro["ID_Profesor"];
+                }
+            }
 
-            if ($registro['Nombre']) {
-                echo "Se ha encontrado en la base de datos";
+            if ($encontrado) {
 
                 if ($_POST['con'] == $registro['Contraseña']) {
                     echo "Contraseña correcta";
-                    $_SESSION["Nombre"]=$registro["Nombre"];
-                    $_SESSION["Rol"]=$registro["rol"];
-                    $_SESSION["ID"]=$registro["ID_Profesor"];
+                    $_SESSION["Nombre"]=$nombre;
+                    $_SESSION["Rol"]=$rol;
+                    $_SESSION["ID"]=$id;
                     header('location: ../html/index.php');
                 }
                 else {
@@ -46,29 +55,31 @@
 
             }
             else {
-                
                 echo "<h1>Este usuario no existe</h1>";
             }
 
             break;
 
         case 'a':
-            echo "has seleccionado alumno";
+            $resultado=$BaseDatos->loginAlumno($_POST["nom"]);
 
-            $conexion_mysql= mysqli_connect("localhost", "elusuario", "lacontra", "proyectodual");
+            foreach($resultado as $registro){
+                if ($_POST["nom"] == $registro["Nombre"]) {
+                    $encontrado = true;
+                    $nombre = $registro["Nombre"];
+                    $rol = $registro["rol"];
+                    $contra = $registro["Contraseña"];
+                    $id = $registro["ID_Alumno"];
+                }
+            }
 
-            $codigo_sql = "SELECT * FROM alumno where Nombre='".$_POST["nom"]."'";
-            $resultado = mysqli_query($conexion_mysql, $codigo_sql);
-            $registro = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
-
-            if ($registro['Nombre']) {
-                echo "Se ha encontrado en la base de datos";
-
+            if ($encontrado) {
+                
                 if ($_POST['con'] == $registro['Contraseña']) {
                     echo "Contraseña correcta";
-                    $_SESSION["Nombre"]=$registro["Nombre"];
-                    $_SESSION["Rol"]=$registro["rol"];
-                    $_SESSION["ID"]=$registro["ID_Alumno"];
+                    $_SESSION["Nombre"]=$nombre;
+                    $_SESSION["Rol"]=$rol;
+                    $_SESSION["ID"]=$id;
                     header('location: ../html/index.php');
                 }
                 else {
@@ -77,7 +88,6 @@
 
             }
             else {
-                
                 echo "<h1>Este usuario no existe</h1>";
             }
 

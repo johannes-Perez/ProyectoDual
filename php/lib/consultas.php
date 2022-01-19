@@ -111,5 +111,35 @@
 		}
 	}
 
+	// login.php para profesores
+	public function loginProfesor($nombre){
+		$sql="SELECT * FROM profesor where Nombre='".$nombre."'";
+		$resultado =$this->realizarConsulta($sql);
+		if ($resultado!=null){
+			$tabla=[];
+			while($fila=$resultado->fetch_assoc()){
+				$tabla[]=$fila;
+			}
+				return $tabla;
+			}else{
+				return null;
+		}
+	}
+
+	// login.php para alumnos
+	public function loginAlumno($nombre){
+		$sql="SELECT * FROM alumno where Nombre='".$nombre."'";
+		$resultado =$this->realizarConsulta($sql);
+		if ($resultado!=null){
+			$tabla=[];
+			while($fila=$resultado->fetch_assoc()){
+				$tabla[]=$fila;
+			}
+				return $tabla;
+			}else{
+				return null;
+		}
+	}
+
 	}
 ?>
