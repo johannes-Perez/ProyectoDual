@@ -19,7 +19,7 @@
 
     <div  class="menu">
     <div id="contenido">
-                <a class="hoverAzul"href="../html/index.html">Home</a>
+                <a class="hoverAzul"href="../html/index.php">Home</a>
                 <a class="hoverAmarillo" href="mostrar_profesor.php">mostrar profesor</a>
                 <a class="hoverAzul"href="mostrar_alumno.php">mostrar alumno</a>
                 <a class="hoverAmarillo" href="mostrar_empresa.php">mostrar empresa</a>
@@ -31,6 +31,7 @@
     require 'lib/consultas.php';
     $BaseDatos=new consultas();
     $resultado=$BaseDatos->mostrarprofesor();
+
 echo "<table class='table' border=1 align='center'> <tr><th> ID_profesor </th> <th> Nombre </th><th> Apellido1 </th><th> Segundo Apellido </th><th> Email </th></tr>";
 
 
@@ -39,5 +40,7 @@ foreach($resultado as $profesor){
    echo "<tr><td>" . $profesor["ID_Profesor"] ."</td> <td>". $profesor["Nombre"]."</td> <td>". $profesor["Apellido1"]."</td><td>". $profesor["Apellido2"]."</td><td>". $profesor["Email"]."</td>";
     echo "</tr>";   
 }
+
+echo "</table>";
 ?>
 

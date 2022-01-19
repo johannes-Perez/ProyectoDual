@@ -84,24 +84,29 @@ form input[type="submit"]:hover {
     
 <!-- formulario login-->
 
-    <form action="" class="login-wrapper">
+    <form action="php/login.php" class="login-wrapper" method="post">
         <h1><span>Practicas</span> Login.</h1>
 
         <div class="input-row">
             <span class="icon"><i class="fa fa-at"></i></span>
-            <input type="text" placeholder="Email"/>
+            <input type="text" name="nom" placeholder="Nombre" required/>
         </div>
 
         <div class="input-row">
             <span class="icon"><i class="fa fa-lock"></i></span>
-            <input type="password" placeholder="Password"/>
+            <input type="password" name="con" placeholder="Contrase&ntilde;a" required/>
+        </div>
+
+        <div class="input-row">
+            <input type="radio" name="rol" value="p" required>Profesor
+            <input type="radio" name="rol" value="a" required>Alumno
         </div>
 
         <div class="submit-row">
             <input type="submit" value="Sign in &raquo;"/>
         </div>
 <!--Para volver hasta que funcione el login-->
-    <a href="html/index.html"><input type="button" value="Volver al menú"></a>
+    <a href="html/index.php"><input type="button" value="Volver al menú"></a>
 
     </form>
 

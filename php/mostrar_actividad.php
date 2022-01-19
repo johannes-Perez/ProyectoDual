@@ -20,7 +20,7 @@
 
     <div  class="menu">
     <div id="contenido">
-                <a class="hoverAzul"href="../html/index.html">Home</a>
+                <a class="hoverAzul"href="../html/index.php">Home</a>
                 <a class="hoverAmarillo" href="mostrar_profesor.php">mostrar profesor</a>
                 <a class="hoverAzul"href="mostrar_alumno.php">mostrar alumno</a>
                 <a class="hoverAmarillo" href="mostrar_empresa.php">mostrar empresa</a>
@@ -43,6 +43,6 @@ foreach($resultado as $actividad){
 ?>
 </table>
 <!-- Comentar al equipo si sige haciendo falta este boton con la adición del menú superior
-    <a href="../html/index.html"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a> -->
+    <a href="../html/index.php"><input type="button" class="btn btn-secondary btn-lg" value="Volver al menú"></a> -->
 </body>
 </html>
